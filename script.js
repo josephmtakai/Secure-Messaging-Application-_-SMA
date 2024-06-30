@@ -1,48 +1,24 @@
-// Example frontend script (JavaScript)
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('message-form');
-    const messageInput = document.getElementById('message-input');
-    const messageContainer = document.getElementById('message-container');
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const app = express();
 
-    // Replace with actual API endpoints
-    const API_URL = 'http://localhost:3000/api';
+const PORT = process.env.PORT || 3000;
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const message = messageInput.value.trim();
-        if (!message) return;
+// Middleware
+app.use(bodyParser.json());
+app.use(cors());
 
-        sendMessage(message);
-        messageInput.value = '';
-    });
+// Routes
+// (Your routes here)
 
-    async function sendMessage(message) {
-        try {
-            const response = await fetch(`${API_URL}/messages`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ message })
-            });
+// Database connection
+mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB connected...'))
+    .catch(err => console.log(err));
 
-            if (!response.ok) {
-                throw new Error('Failed to send message');
-            }
-
-            const data = await response.json();
-            displayMessage(data.message);
-        } catch (error) {
-            console.error('Error sending message:', error.message);
-        }
-    }
-
-    function displayMessage(message) {
-        const messageElement = document.createElement('div');
-        messageElement.classList.add('message');
-        messageElement.textContent = message;
-        messageContainer.appendChild(messageElement);
-        messageContainer.scrollTop = messageContainer.scrollHeight;
-    }
+// Start server
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
