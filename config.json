@@ -1,0 +1,4 @@
+{
+    "secretKey": "yourSecretKey123",
+    "dbURI": "mongodb://localhost:27017/secure_messaging_app"
+}
