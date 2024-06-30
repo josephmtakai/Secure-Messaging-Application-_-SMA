@@ -1,0 +1,20 @@
+secure-messaging-app/
+├── frontend/
+│   ├── index.html
+│   ├── styles.css
+│   └── script.js
+└── backend/
+    ├── server.js
+    ├── config.json
+    ├── package.json
+    ├── controllers/
+    │   ├── authController.js
+    │   └── messageController.js
+    ├── models/
+    │   └── User.js
+    ├── routes/
+    │   ├── authRoutes.js
+    │   └── messageRoutes.js
+    └── utils/
+        ├── encryption.js
+        └── auth.js
