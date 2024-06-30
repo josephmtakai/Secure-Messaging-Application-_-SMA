@@ -7,5 +7,16 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.4.4"
-  }
+  },
+  "name": "secure-messaging-application-_-sma",
+  "version": "1.0.0",
+  "description": "This project is a secure messaging application that ensures end-to-end encryption for user communications. It allows users to send encrypted messages securely over the internet.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
