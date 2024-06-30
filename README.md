@@ -52,6 +52,10 @@ bash:
 node backend/server.js
 Open frontend/index.html in a web browser or serve it using a web server.
 
+Screenshot:
+![secure messaging app](https://github.com/josephmtakai/Secure-Messaging-Application-_-SMA/assets/108322731/bcbfb6a4-fd7e-4530-a180-e0d0b23f93d1)
+
+
 Usage
 Register a new user account or log in with an existing account.
 Use the messaging interface to send and receive encrypted messages.
